@@ -1,4 +1,5 @@
 class CreateMovies < ActiveRecord::Migration[5.2]
+  
   def change
     create_table :movies do |t|
       t.string :title
@@ -8,6 +9,6 @@ class CreateMovies < ActiveRecord::Migration[5.2]
       t.boolean :in_theatres
   end
   end
-  
+
 end
 

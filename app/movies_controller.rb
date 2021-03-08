@@ -62,7 +62,6 @@ def can_find_by_multiple_attributes
   # release_date == 2000
   # director == "Me"
   Movie.find_by(title: "Title", release_date: 2000, director: "Me")
-
 end
 
 def can_find_using_where_clause_and_be_sorted
@@ -72,8 +71,8 @@ def can_find_using_where_clause_and_be_sorted
     if movies.release_date >= 2002
       release_date.sort_by do |sort|
         -sort
+     
       end
-
     end
   end
 
@@ -83,14 +82,16 @@ def can_be_found_updated_and_saved
   movie = Movie.find_by(title:"Awesome Flick")
   movie.update(title: "Even Awesomer Flick")
   movie.save
+  movie
 end
 
 def can_update_using_update_method
   # Update movie title to "Wat, huh?"
   Movie.create(title: "Wat, huh?")
-  movie = Movie.find_by(title: "Wat, huh")
-  movie.update =(title: "Wat, huh?")
+  movie = Movie.find_by(title: "Wat, huh?")
+  movie.update(title: "Wat, huh?")
 end
+
 
 def can_update_multiple_items_at_once
   # Change title of all movies to "A Movie"
@@ -99,6 +100,7 @@ def can_update_multiple_items_at_once
   end
   Movie.all.each do |movies|
     movies.update(title: "A Movie")
+end
 end
 
 def can_destroy_a_single_item
